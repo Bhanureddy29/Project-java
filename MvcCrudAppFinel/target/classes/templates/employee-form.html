@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee Form</title>
+</head>
+<body>
+<h1> ADD or UPDATE Employee </h1>
+<form th:action="@{/save}" th:object="${employee}" method="POST">
+<!-- Add hidden form field to handle update -->
+<input type="hidden" th:field="*{id}" />
+<input type="text" th:field="*{firstname}" placeholder="First name"
+class="form-control mb-4 w-25"> <br><br>
+<input type="text" th:field="*{lastname}" placeholder="Last name"
+class="form-control mb-4 w-25"> <br><br>
+<input type="text" th:field="*{email}" placeholder="Email"
+class="form-control mb-4 w-25"> <br><br>
+<button type="submit" class="btn btn-info col-2">Save</button>
+</form>
+</body>
+</html>
